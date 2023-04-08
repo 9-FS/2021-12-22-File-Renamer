@@ -1,0 +1,9 @@
+*.bat
+*.csv
+*.exe
+*.log
+*.pyc
+*.token
+/src/__pycache__/
+/src/Log/
+/src/test.py
