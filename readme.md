@@ -3,7 +3,7 @@ Topic: "Filename Dateformat Changer"
 Author: "구FS"
 ---
 <link href="./src/KFS/md_style.css" rel="stylesheet"></link>
-<div id="global">
+<body>
 
 # <p style="text-align: center">Filename Dateformat Changer</p>
 <br>
@@ -42,4 +42,12 @@ This program is intended to change the date format of file names. It renames acc
 1. Use the datetime expressions from the python [datetime](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior) library.
 1. Execute either `main_outer.py` with python or a `Filename Dateformat Changer.exe` directly.
 
+<div class="img_centre_30">
+    <a href="https://www.paypal.com/paypalme/KooFelixSangmo">
+        <img alt="Error: Could not load image source."
+        src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"/>
+    </a>
+    <p class=img_caption>Click to buy me a beer!</p>
 </div>
+
+</body
