@@ -2,7 +2,7 @@
 authors     = ["9FS <pray4spam@googlemail.com>"]
 description = ""
 license     = "MIT"
-name        = "Filename Dateformat Changer"
+name        = "x"                                                              # can't leave empty because of bug with `poetry install` from poetry.lock file
 readme      = "readme.md"
 repository  = "https://github.com/9-FS/2021-12-22-Filename-Dateformat-Changer"
 version     = "1.0.2"
