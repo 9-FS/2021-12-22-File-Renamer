@@ -5,7 +5,7 @@ license     = "MIT"
 name        = "Filename Dateformat Changer"
 readme      = "readme.md"
 repository  = "https://github.com/9-FS/2021-12-22-Filename-Dateformat-Changer"
-version     = "1.0.1"
+version     = "1.0.2"
 
 [tool.poetry.dependencies]
 kfsconfig = "^1.0.0"
