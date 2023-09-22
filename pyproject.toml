@@ -5,15 +5,14 @@ license     = "MIT"
 name        = "Filename Dateformat Changer"
 readme      = "readme.md"
 repository  = "https://github.com/9-FS/2021-12-22-Filename-Dateformat-Changer"
-version     = "1.0.0"
+version     = "1.0.1"
 
 [tool.poetry.dependencies]
-KFS    = "^1.0.0"
-python = "^3.11.0, <3.13"
-pandas = "^2.1.0"
-
-[tool.poetry.group.dev.dependencies]
-pyinstaller = "^5.13.2"
+kfsconfig = "^1.0.0"
+kfsfstr   = "^1.0.0"
+kfslog    = "^1.0.0"
+pandas    = "^2.1.0"
+python    = "^3.11.0"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"

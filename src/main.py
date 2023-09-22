@@ -3,14 +3,16 @@ import csv
 import datetime as dt
 import dateutil.tz  # timezones
 import inspect
-import KFS.config, KFS.fstr, KFS.log
+import io
+from KFSconfig import KFSconfig
+from KFSfstr   import KFSfstr
+from KFSlog    import KFSlog
 import logging
 import os
 import pandas
-import io
 
 
-@KFS.log.timeit
+@KFSlog.timeit
 def main() -> None:
     CONFIG_FILENAME: str="Filename Dateformat Changer.csv"  # config filename
     config_df: pandas.DataFrame                             # loaded configurations
@@ -47,7 +49,7 @@ def main() -> None:
                 return
     with ContextManager() as context:   # upon exit, if unsuccessful: don't close console windows immediately after execution
         try:
-            config_df=pandas.read_csv(io.StringIO(KFS.config.load_config(CONFIG_FILENAME, config_filecontent_default)),
+            config_df=pandas.read_csv(io.StringIO(KFSconfig.load_config(CONFIG_FILENAME, config_filecontent_default)),
                                     comment="#",              # ignore comments
                                     on_bad_lines="skip",      # will do my own checking
                                     quoting=csv.QUOTE_NONE,   # don't encapsulate data in quotes
@@ -97,7 +99,7 @@ def main() -> None:
                 logging.debug(f"\rConverted \"{filename_base}{config_row.iloc[1]}\" to datetime with format \"{config_row.iloc[0]}\".")
                 if config_df_TZ_in[int(i)]==False and config_df_TZ_out[int(i)]==False:  # if timezones should be changed: #type:ignore
                     filename_DT=filename_DT.astimezone(dateutil.tz.tzoffset(None, int(config_row.iloc[3][0:3])*3600+int(config_row.iloc[3][4:6])*60))   # change timezone                                                                  
-                    logging.debug(f"Changed datetime timezone offset to \"{KFS.fstr.notation_tech(int(config_row.iloc[3][0:3])*3600+int(config_row.iloc[3][4:6])*60, 0, round_static=True)}s\".")
+                    logging.debug(f"Changed datetime timezone offset to \"{KFSfstr.notation_tech(int(config_row.iloc[3][0:3])*3600+int(config_row.iloc[3][4:6])*60, 0, round_static=True)}s\".")
                 filename_new=f"{filename_DT.strftime(config_row.iloc[2])}{filename_extension}"  # DT -> str, re-add file extension
                 logging.info(f"Filename new: \"{filename_new}\"")
                 
