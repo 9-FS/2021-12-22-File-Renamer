@@ -1,0 +1,11 @@
+# Fill your lines out according to the csv header below.
+# Use the datetime expressions from "https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior".
+input datetime format	input timezone offset	output datetime format	output timezone offset
+
+# samsung camera
+%Y%m%d_%H%M%S		%Y-%m-%d %H_%M_%S	
+%Y%m%d_%H%M%S(%f)		%Y-%m-%d %H_%M_%S	
+
+# dropbox
+%Y-%m-%d %H.%M.%S		%Y-%m-%d %H_%M_%S	
+%Y-%m-%d %H.%M.%S(%f)		%Y-%m-%d %H_%M_%S	
