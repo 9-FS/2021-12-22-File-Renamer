@@ -13,7 +13,7 @@ import pandas
 
 
 @KFSlog.timeit
-def main() -> None:
+def main(DEBUG: bool) -> None:
     filename_base: str                                      # filename without extension
     filename_DT: dt.datetime                                # filename as DT
     filename_extension: str                                 # filename extension (with dot)
