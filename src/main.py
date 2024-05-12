@@ -12,7 +12,7 @@ import os
 import pandas
 
 
-@KFSlog.timeit
+@KFSlog.timeit()
 def main(DEBUG: bool) -> None:
     filename_base: str                                      # filename without extension
     filename_DT: dt.datetime                                # filename as DT
@@ -49,12 +49,12 @@ def main(DEBUG: bool) -> None:
                 return
     with ContextManager() as context:   # upon exit, if unsuccessful: don't close console windows immediately after execution
         try:
-            format_conversion_df=pandas.read_csv(io.StringIO(KFSconfig.load_config("./config/format conversion.csv", format_conversion_default)),
+            format_conversion_df=pandas.read_csv(io.StringIO(KFSconfig.load_config(env=False, config_filepaths=["./config/format_conversion.csv"], config_default={"content": format_conversion_default})["content"]),
                                                  comment="#",               # ignore comments
                                                  on_bad_lines="skip",       # will do my own checking
                                                  quoting=csv.QUOTE_NONE,    # don't encapsulate data in quotes
                                                  sep="\t")                  # tab as data separator because it can't be used in filenames
-        except FileNotFoundError:
+        except ValueError:
             return
         logging.info(format_conversion_df)
         if format_conversion_df["input datetime format"].isnull().values.any():    # is any input datetime format NaN? # type:ignore
