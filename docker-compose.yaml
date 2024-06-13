@@ -1,20 +1,20 @@
 version: "3"
 
 services:
-  2021-12-22-filename-dateformat-changer:
-    container_name: 2021-12-22-Filename-Dateformat-Changer
-    image: 9-fs/2021-12-22-filename-dateformat-changer:latest
-    environment:
-      - HOST_OS=Unraid
-      - TZ=UTC
-    volumes:
-      - /mnt/user/appdata/2021-12-22-filename-dateformat-changer/config/:/app/config/:rw
-      - /mnt/user/appdata/2021-12-22-filename-dateformat-changer/log/:/app/log/:rw
-    network_mode: bridge
-    deploy:
-      resources:
-        limits:
-          memory: 1G
-    user: 99:100
+    2021-12-22-filename-dateformat-changer:
+        container_name: "2021-12-22-Filename-Dateformat-Changer"
+        image: "9-fs/2021-12-22-filename-dateformat-changer:latest"
+        environment:
+            HOST_OS: "Unraid"
+            TZ: "UTC"
+        volumes:
+            - "/mnt/user/appdata/2021-12-22-filename-dateformat-changer/config/:/app/config/:rw"
+            - "/mnt/user/appdata/2021-12-22-filename-dateformat-changer/log/:/app/log/:rw"
+        network_mode: "bridge"
+        deploy:
+            resources:
+                limits:
+                    memory: "1G"
+        user: "99:100"
 
 networks: {}
